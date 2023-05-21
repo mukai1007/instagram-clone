@@ -21,8 +21,8 @@ onMounted(() => {
 <template>
     <Carousel
         v-model="currentSlide"
-        class="max-w-[700px] mx-auto border-2 rounded-lg bg-white"
-        :items-to-show="wWidth >= 768 ? 8 : 6"
+        class="max-w-[470px] mx-auto border-[1px] border-gray-300 rounded-lg bg-white mb-10"
+        :items-to-show="wWidth >= 768 ? 6 : 4"
         :items-to-scroll="4"
         :wrap-around="true"
         :transition="500"
