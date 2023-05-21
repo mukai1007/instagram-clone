@@ -11,6 +11,7 @@ import Menu from 'vue-material-design-icons/Menu.vue';
 import Logout from 'vue-material-design-icons/Logout.vue';
 
 import { toRefs, ref } from 'vue';
+import { Link } from '@inertiajs/vue3';
 
 const props = defineProps({iconString: String})
 const { iconString } = toRefs(props)
@@ -34,8 +35,8 @@ if (iconString.value === 'Выйти') icon = Logout
             <img
                 v-if="iconString === 'Профиль'"
                 :class="{'mr-1': iconString === 'Профиль'}"
-                class="rounded-full ml-[2px] w-[30px] cursor-pointer"
-                src="/user-placeholder.png"
+                class="rounded-full border-black border-[2px] ml-[2px] w-[30px] cursor-pointer"
+                src="/img.jpg"
             >
             <component v-else :is="icon" :size="30"/>
             <span class="xl:block hidden text-black font-medium text-[16px] pl-2 mt-0.5">

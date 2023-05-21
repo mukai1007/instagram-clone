@@ -69,7 +69,7 @@ const randomUsers = [
             <Link href="/" class="px-4">
                 <ChevronLeft :size="30" class="cursor-pointer"/>
             </Link>
-            <div class="text-center w-[100%] text-lg font-extrabold">Discovery Studio</div>
+            <div class="text-center w-[100%] text-lg font-extrabold">mukai_jakypbekov</div>
         </div>
 
         <!-- Left Sidebar -->
@@ -111,7 +111,7 @@ const randomUsers = [
 
             <!-- Recommendations Section -->
             <div v-if="$page.url === '/'" id="RecommendationsSection" class="lg:w-4/12 lg:block hidden text-black mt-10">
-                <Link class="flex items-center justify-between max-w-[350px] px-3">
+                <Link href="/user" class="flex items-center justify-between max-w-[350px] px-3">
                     <div class="flex items-center">
                         <img class="bg-white rounded-full object-contain z-10 w-[56px] h-[56px]" src="/img.jpg">
                         <div class="pl-4">
