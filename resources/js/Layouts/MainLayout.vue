@@ -14,6 +14,9 @@ import { ref } from 'vue';
 import { Link } from '@inertiajs/vue3';
 
 import MenuItem from '@/Components/MenuItem.vue';
+import CreatePost from '@/Components/CreatePost.vue'
+
+const showCreatePost = ref(false)
 
 const randomUsers = [
     {name: 'Jakypbekov Mukai'},
@@ -85,7 +88,7 @@ const randomUsers = [
                 <MenuItem iconString="Reels" class="mb-4"/>
                 <MenuItem iconString="Сообщения" class="mb-4"/>
                 <MenuItem iconString="Уведомления" class="mb-4"/>
-                <MenuItem iconString="Создать" class="mb-4"/>
+                <MenuItem @click="showCreatePost = true" iconString="Создать" class="mb-4"/>
                 <MenuItem iconString="Профиль" class="mb-4"/>
             </div>
 
@@ -110,7 +113,7 @@ const randomUsers = [
             <div v-if="$page.url === '/'" id="RecommendationsSection" class="lg:w-4/12 lg:block hidden text-black mt-10">
                 <Link class="flex items-center justify-between max-w-[350px] px-3">
                     <div class="flex items-center">
-                        <img class="rounded-full z-10 w-[56px] h-[56px]" src="/user-placeholder.png">
+                        <img class="bg-white rounded-full object-contain z-10 w-[56px] h-[56px]" src="/img.jpg">
                         <div class="pl-4">
                             <div class="text-black font-extrabold text-[14px]">mukai_jakypbekov</div>
                             <div class="text-gray-500 text-extrabold text-[14px]">Мукай Жакыпбеков</div>
@@ -157,8 +160,8 @@ const randomUsers = [
                 <HomeOutline fillColor="#000000" :size="33" class="cursor-pointer" />
             </Link>
             <Magnify fillColor="#000000" :size="33" class="cursor-pointer" />
-            <Plus fillColor="#000000" :size="33" class="cursor-pointer" />
-            <Video @click="showCreatePost = true" fillColor="#000000" :size="33" class="cursor-pointer" />
+            <Plus @click="showCreatePost = true" fillColor="#000000" :size="33" class="cursor-pointer" />
+            <Video fillColor="#000000" :size="33" class="cursor-pointer" />
             <Link>
                 <img
                     class="w-[30px] rounded-full cursor-pointer"
@@ -166,5 +169,7 @@ const randomUsers = [
                 >
             </Link>
         </div>
-      </div>  
+      </div>
+
+      <CreatePost v-if="showCreatePost" @close="showCreatePost = false"/>
 </template>
